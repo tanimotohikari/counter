@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+  <style>
+  .counter:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+  .counter > * {
+    width: 30px;
+    float: left;
+    text-align: center;
+    vertical-align: middle;
+  }
+  .click-area {
+    cursor: pointer;
+  }
+  </style>
+  <script>
+  window.onload = function () {
+    let countItemMinus = document.getElementById("minus");
+    let countItemPlus = document.getElementById("plus");
+    let number = document.getElementById("number");
+    let count = 0;
+
+    function countUp() {
+      count++;
+      number.innerText = count;
+    }
+
+    function countDown() {
+      if(count !== 0) {
+        count--;
+        number.innerText = count;
+      }
+    }
+
+    countItemMinus.addEventListener('click', countDown);
+    countItemPlus.addEventListener('click', countUp);
+
+
+  }
+  </script>
+</head>
+<body>
+<div class="counter">
+  <div id="minus" class="click-area"><i class="fas fa-minus"></i></div>
+  <div id="number">0</div>
+  <div id="plus" class="click-area"><i class="fas fa-plus"></i></div>
+</div>
+</body>
+</html>
